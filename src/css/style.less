@@ -1,0 +1,64 @@
+@import "normalize.less";
+
+
+/* ==========================================================================
+   Mixins
+   ========================================================================== */
+
+@blue: SlateBlue;
+@textcolor: #555;
+
+.handwriting { font-family: 'Shadows Into Light', cursive; }
+.oswald { font-family: 'Oswald', sans-serif; }
+
+.box-shadow(@shadow, @shadow2: transparent 0 0 0) {
+  -webkit-box-shadow: @shadow, @shadow2;
+     -moz-box-shadow: @shadow, @shadow2;
+          box-shadow: @shadow, @shadow2;
+}
+
+
+/* ==========================================================================
+   Layout
+   ========================================================================== */
+
+body > .container {
+  text-align: center; 
+  padding: 2em;
+  color: @textcolor;
+  font-weight: 300;
+  .oswald;
+}
+
+.l-giant {
+  font-size: 3em;
+}
+
+.fill-in-the-blank {
+  outline: 0;
+  border-width: 0 0 4px 0;
+  border-color: @blue;
+  .handwriting;
+  text-align: center; 
+}
+
+.nobreak {
+  white-space: nowrap; 
+}
+
+.btn {
+  font-weight: 700;
+  .oswald;
+  border: 0;
+  background: SlateBlue;
+  color: #fff; 
+  padding: 0.25em 0.75em;
+  position: relative;
+  .box-shadow(-0.125em 0.125em 0 rgba(0,0,0,0.25), inset 0 0.25em 1em rgba(255,255,255,0.75));
+
+  &:active {
+    top: 0.125em;
+    right: 0.125em;
+    .box-shadow(0 0 0 transparent, inset 0 0 1em rgba(255,255,255,0.75));
+  }
+}
