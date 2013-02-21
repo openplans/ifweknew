@@ -41,7 +41,7 @@
     <form>
       <p class="l-giant">
         If we knew 
-        <span class="nobreak"><input class="fill-in-the-blank" type="text" name="mystery" id="mystery" placeholder="how">,</span> then we could 
+        <span class="nobreak"><input class="fill-in-the-blank" type="text" name="mystery" id="mystery" placeholder="how">,</span> <span class="nobreak">then we could</span> 
         <input class="fill-in-the-blank" type="text" name="goal" id="goal" placeholder="help"> in 
         <span class="nobreak"><input class="fill-in-the-blank" type="text" name="place" id="place" placeholder="city">.</span>
       </p>
@@ -53,6 +53,41 @@
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.4.4/underscore-min.js"></script>
   <script src="http://cdnjs.cloudflare.com/ajax/libs/ICanHaz.js/0.10/ICanHaz.min.js"></script>
+
+
+    <script type="text/javascript">
+      jQuery(function ($) {
+        $(document).ready(function() {
+
+            var mysteries = ['if','why','who','what','how'];
+            im=0;
+            setInterval(function(){
+              $('#mystery').attr('placeholder', mysteries[im]);
+              im++;
+              if(im==goals.length) { im=0; }
+            }, 1600);
+
+            var goals = ['change','fix','imrove','help'];
+            ig=0;
+            setInterval(function(){
+              $('#goal').attr('placeholder', goals[ig]);
+              ig++;
+              if(ig==goals.length) { ig=0; }
+            }, 1200);
+
+            var places = ['neighborhood','town','county','region','city'];
+            ip=0;
+            setInterval(function(){
+              $('#place').attr('placeholder', places[ip]);
+              ip++;
+              if(ip==goals.length) { ip=0; }
+            }, 1400);
+
+
+
+        });
+      });
+    </script>
 
 </body>
 </html>

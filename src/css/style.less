@@ -5,7 +5,7 @@
    Mixins
    ========================================================================== */
 
-@blue: SlateBlue;
+@blue: SteelBlue;
 @textcolor: #555;
 
 .handwriting { font-family: 'Shadows Into Light', cursive; }
@@ -22,9 +22,13 @@
    Layout
    ========================================================================== */
 
+body {
+  background: #eee;
+}
+
 body > .container {
   text-align: center; 
-  padding: 2em;
+  padding: 1em 2em 2em;
   color: @textcolor;
   font-weight: 300;
   .oswald;
@@ -38,8 +42,10 @@ body > .container {
   outline: 0;
   border-width: 0 0 4px 0;
   border-color: @blue;
-  .handwriting;
   text-align: center; 
+  max-width: 75%;
+  background: #eee;
+  .handwriting;
 }
 
 .nobreak {
@@ -50,7 +56,7 @@ body > .container {
   font-weight: 700;
   .oswald;
   border: 0;
-  background: SlateBlue;
+  background: @blue;
   color: #fff; 
   padding: 0.25em 0.75em;
   position: relative;
@@ -62,3 +68,24 @@ body > .container {
     .box-shadow(0 0 0 transparent, inset 0 0 1em rgba(255,255,255,0.75));
   }
 }
+
+
+/* =Media Queries for Responsive Layout
+-------------------------------------------------------------- */
+
+@media only screen and (min-width: 320px) {
+}
+
+@media only screen and (min-width: 480px) {
+}
+
+@media only screen and (min-width: 768px) {
+  body > .container { font-size: 1.2em; }
+}
+
+@media only screen and (min-width: 1024px) {
+}
+
+@media only screen and (min-width: 1300px) {
+}
+
