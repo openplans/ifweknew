@@ -23,6 +23,9 @@ class WishesView (CreateView):
         }
         status = u'#IfWeKnew {mystery} then we could {goal} in {place}'.format(**status_parts)
 
+        if len(status) > 140:
+            return result
+
         # Tweet
         twitter = Twitter(
             auth=OAuth(
