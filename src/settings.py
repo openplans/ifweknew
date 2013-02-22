@@ -88,6 +88,27 @@ LOGGING = {
 }
 
 ##############################################################################
+# Environment loading
+from urlparse import urlparse
+from os import environ
+
+if 'DATABASE_URL' in environ:
+    import dj_database_url
+    DATABASES = {'default': dj_database_url.config()}
+
+if 'DEBUG' in environ:
+    DEBUG = (environ['DEBUG'].lower() == 'true')
+    TEMPLATE_DEBUG = DEBUG
+
+if all([tw_key in environ for tw_key in
+        ('TWITTER_ACCESS_TOKEN', 'TWITTER_ACCESS_TOKEN_SECRET',
+         'TWITTER_CONSUMER_KEY', 'TWITTER_CONSUMER_SECRET')]):
+    TWITTER_ACCESS_TOKEN = environ['TWITTER_ACCESS_TOKEN']
+    TWITTER_ACCESS_TOKEN_SECRET = environ['TWITTER_ACCESS_TOKEN_SECRET']
+    TWITTER_CONSUMER_KEY = environ['TWITTER_CONSUMER_KEY']
+    TWITTER_CONSUMER_SECRET = environ['TWITTER_CONSUMER_SECRET']
+
+##############################################################################
 # Local settings overrides
 # ------------------------
 # Override settings values by importing the local_settings.py module.
