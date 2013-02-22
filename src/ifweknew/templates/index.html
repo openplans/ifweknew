@@ -10,8 +10,8 @@
   <title>If we knew _________, then we could _________ in _________.</title>
 
   <meta charset="utf-8">
-  <meta name="description" content="If we knew&hellip; by OpenPlans">
-  <meta name="author" content="If we knew&hellip; by OpenPlans">
+  <meta name="description" content="If we knew… by OpenPlans">
+  <meta name="author" content="If we knew… by OpenPlans">
 
   <!--  Mobile Viewport Fix -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
@@ -41,8 +41,8 @@
     <form method="POST">{% csrf_token %}
       <p class="l-giant">
         If we knew
-        <span class="nobreak"><input class="fill-in-the-blank" type="text" name="mystery" id="mystery" placeholder="how">,</span> <span class="nobreak">then we could</span>
-        <input class="fill-in-the-blank" type="text" name="goal" id="goal" placeholder="help"> in
+        <span class="nobreak"><input class="fill-in-the-blank" type="text" name="mystery" id="mystery" placeholder="how…">,</span> <span class="nobreak">then we could</span>
+        <input class="fill-in-the-blank" type="text" name="goal" id="goal" placeholder="help…"> in
         <span class="nobreak"><input class="fill-in-the-blank" type="text" name="place" id="place" placeholder="city">.</span>
       </p>
       <input type="submit" value="Submit" class="l-giant btn">
@@ -56,36 +56,35 @@
 
 
     <script type="text/javascript">
-      jQuery(function ($) {
-        $(document).ready(function() {
+      var fields = [
+            { id: 'mystery', terms: ['if…','why…','who…','what…','how…'] },
+            { id: 'goal', terms: ['change…','fix…','improve…','help…'] },
+            { id: 'place', terms: ['neighborhood','town','county','region','city'] }
+          ],
+          fieldLen = fields.length,
+          index = 0;
 
-            var mysteries = ['if','why','who','what','how'];
-            im=0;
-            setInterval(function(){
-              $('#mystery').attr('placeholder', mysteries[im]);
-              im++;
-              if(im==goals.length) { im=0; }
-            }, 1600);
+      jQuery(function () {
+        setInterval(function() {
+          var term,
+              //index = parseInt(Math.random() * fieldLen),
+              field = fields[index];
 
-            var goals = ['change','fix','imrove','help'];
-            ig=0;
-            setInterval(function(){
-              $('#goal').attr('placeholder', goals[ig]);
-              ig++;
-              if(ig==goals.length) { ig=0; }
-            }, 1200);
+          field.termIndex = field.termIndex || 0;
+          term = field.terms[field.termIndex];
 
-            var places = ['neighborhood','town','county','region','city'];
-            ip=0;
-            setInterval(function(){
-              $('#place').attr('placeholder', places[ip]);
-              ip++;
-              if(ip==goals.length) { ip=0; }
-            }, 1400);
+          $('#' + field.id).attr('placeholder', term);
 
+          field.termIndex++;
+          if (field.termIndex === field.terms.length) {
+            field.termIndex = 0;
+          }
 
-
-        });
+          index++;
+          if (index === fieldLen) {
+            index = 0;
+          }
+        }, 1500);
       });
     </script>
 
