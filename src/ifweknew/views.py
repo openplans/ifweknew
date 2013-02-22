@@ -1,6 +1,7 @@
 from django.views.generic import CreateView
 from django.forms import ModelForm
 from django.conf import settings
+from django.contrib import messages
 from django.core.urlresolvers import reverse
 from ifweknew.models import Wish
 from twitter import Twitter, OAuth
@@ -22,6 +23,7 @@ class WishesView (CreateView):
             'place': self.object.place,
         }
         status = u'#IfWeKnew {mystery} then we could {goal} in {place}'.format(**status_parts)
+        messages.success(self.request, status)
 
         if len(status) > 140:
             return result

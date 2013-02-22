@@ -38,6 +38,13 @@
 
   <div class="container">
 
+    {% if messages %}
+    {% for message in messages %}
+    <p>&quot;{{ message }}&quot;</p>
+    {% endfor %}
+    <p>Thanks for your input!</p>
+    {% endif %}
+
     <form method="POST">{% csrf_token %}
       <p class="l-giant">
         If we knew
