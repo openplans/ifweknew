@@ -29,12 +29,12 @@ class WishesView (CreateView):
             return result
 
         # Tweet
-        twitter = Twitter(
-            auth=OAuth(
-                settings.TWITTER_ACCESS_TOKEN, settings.TWITTER_ACCESS_TOKEN_SECRET,
-                settings.TWITTER_CONSUMER_KEY, settings.TWITTER_CONSUMER_SECRET
-            ), api_version=1)
-        twitter.statuses.update(status=status)
+#        twitter = Twitter(
+#            auth=OAuth(
+#                settings.TWITTER_ACCESS_TOKEN, settings.TWITTER_ACCESS_TOKEN_SECRET,
+#                settings.TWITTER_CONSUMER_KEY, settings.TWITTER_CONSUMER_SECRET
+#            ), api_version=1)
+#        twitter.statuses.update(status=status)
 
         return result
 

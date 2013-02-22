@@ -37,6 +37,13 @@
     .too-long {
       color: red;
     }
+
+    .tweet-empty,
+    .tweet-mystery,
+    .tweet-goal,
+    .tweet-place {
+      font-weight: bold;
+    }
   </style>
 
 </head>
@@ -106,24 +113,29 @@
           var mystery = $('#mystery').val(),
               goal = $('#goal').val(),
               place = $('#place').val(),
-              tweet = '#IfWeKnew';
+              tweet = '#IfWeKnew',
+              markup = '#IfWeKnew';
           if (mystery === '') {
             tweet += '…';
+            markup += '<span class="tweet-empty">…</span>';
           }
 
           if (mystery !== '') {
             tweet += ' ' + mystery;
+            markup += ' <span class="tweet-mystery">' + mystery + '</span>';
           }
 
           if (goal) {
             tweet += ' then we could ' + goal;
+            markup += ' then we could <span class="tweet-goal">' + goal + '</span>';
           }
 
           if (place) {
             tweet += ' in ' + place;
+            markup += ' in <span class="tweet-place">' + place + '</span>.';
           }
 
-          $('.tweet-text').html(tweet);
+          $('.tweet-text').html(markup);
           $('.tweet-length').html(140 - tweet.length);
 
           if (tweet.length > 140) {
@@ -136,4 +148,4 @@
     </script>
 
 </body>
-</html>
+</html>…
