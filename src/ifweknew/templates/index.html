@@ -44,14 +44,22 @@
     .tweet-place {
       font-weight: bold;
     }
+    #pre-amble {
+      background: #555;
+      color: #ccc;
+      padding: 10px 10px 7px;
+      text-align: center;
+      border-bottom: 1px solid #000;
+      font-family: 'Oswald', sans-serif;
+    }
   </style>
 
 </head>
 <body>
 
-  <div class="container">
+  <div id="pre-amble">What change could you bring with the right information about your neighborhood?</div>
 
-    <div>What change could you bring with the right information about your neighborhood?</div>
+  <div class="container">
 
     {% if messages %}
     {% for message in messages %}
