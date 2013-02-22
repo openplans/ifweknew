@@ -1,3 +1,6 @@
+DEBUG = True
+TEMPLATE_DEBUG = DEBUG
+
 # The access tokens for the tweeting account
 TWITTER_ACCESS_TOKEN = '35782202-ql9LjEK1yr2O5HMffJMLmbMpXhiTpbRlOyMvAr1ws'
 TWITTER_ACCESS_TOKEN_SECRET = 'jYAiNvuzx8jt4uvDJtsJeBn2UkZ5GEtdVj5RDOYfYLQ'
