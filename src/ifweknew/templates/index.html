@@ -61,9 +61,9 @@
     <form method="POST">{% csrf_token %}
       <p class="l-giant">
         If we knew
-        <span class="nobreak"><input class="fill-in-the-blank" type="text" name="mystery" id="mystery" placeholder="how…">,</span> <span class="nobreak">then we could</span>
-        <input class="fill-in-the-blank" type="text" name="goal" id="goal" placeholder="help…"> in
-        <span class="nobreak"><input class="fill-in-the-blank" type="text" name="place" id="place" placeholder="city">.</span>
+        <span class="nobreak"><input autocomplete="off" class="fill-in-the-blank" type="text" name="mystery" id="mystery" placeholder="how…">,</span> <span class="nobreak">then we could</span>
+        <input autocomplete="off" class="fill-in-the-blank" type="text" name="goal" id="goal" placeholder="help…"> in
+        <span class="nobreak"><input autocomplete="off" class="fill-in-the-blank" type="text" name="place" id="place" placeholder="city">.</span>
       </p>
       <input type="submit" value="Submit" class="l-giant btn">
     </form>
