@@ -103,3 +103,15 @@ LOGGING = {
         },
     }
 }
+
+##############################################################################
+# Local settings overrides
+# ------------------------
+# Override settings values by importing the local_settings.py module.
+
+import os
+LOCAL_SETTINGS_FILE = os.path.join(os.path.dirname(__file__), 'local_settings.py')
+if os.path.exists(LOCAL_SETTINGS_FILE):
+    # By doing this instead of import, local_settings.py can refer to
+    # local variables from settings.py without circular imports.
+    execfile(LOCAL_SETTINGS_FILE)
