@@ -1,4 +1,7 @@
 django==1.4.5
 gunicorn==0.17.2
 twitter==1.9.1
+
+# DB on Heroku
 dj_database_url
+psycopg2
