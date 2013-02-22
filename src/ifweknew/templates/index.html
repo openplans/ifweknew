@@ -33,6 +33,12 @@
     <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
   <![endif]-->
 
+  <style>
+    .too-long {
+      color: red;
+    }
+  </style>
+
 </head>
 <body>
 
@@ -54,6 +60,9 @@
       </p>
       <input type="submit" value="Submit" class="l-giant btn">
     </form>
+
+    <p class="tweet-text">#IfWeKnew…</p>
+    <p class="tweet-length"></p>
 
   </div><!-- end .container -->
 
@@ -92,6 +101,37 @@
             index = 0;
           }
         }, 1500);
+
+        $('input').keyup(function() {
+          var mystery = $('#mystery').val(),
+              goal = $('#goal').val(),
+              place = $('#place').val(),
+              tweet = '#IfWeKnew';
+          if (mystery === '') {
+            tweet += '…';
+          }
+
+          if (mystery !== '') {
+            tweet += ' ' + mystery;
+          }
+
+          if (goal) {
+            tweet += ' then we could ' + goal;
+          }
+
+          if (place) {
+            tweet += ' in ' + place;
+          }
+
+          $('.tweet-text').html(tweet);
+          $('.tweet-length').html(140 - tweet.length);
+
+          if (tweet.length > 140) {
+            $('.tweet-length').addClass('too-long');
+          } else {
+            $('.tweet-length').removeClass('too-long');
+          }
+        });
       });
     </script>
 
