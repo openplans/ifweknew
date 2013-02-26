@@ -361,6 +361,8 @@ body > .container {
   max-width: 75%;
   background: #eee;
   font-family: 'Shadows Into Light', cursive;
+  -webkit-appearance: none;
+  border-radius: 0;
 }
 .nobreak {
   white-space: nowrap;
