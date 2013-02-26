@@ -352,10 +352,12 @@ body > .container {
   font-size: 3em;
 }
 .fill-in-the-blank {
+  display: inline-block;
   outline: 0;
   border-width: 0 0 4px 0;
   border-color: SteelBlue;
   text-align: center;
+  width: 450px;
   max-width: 75%;
   background: #eee;
   font-family: 'Shadows Into Light', cursive;

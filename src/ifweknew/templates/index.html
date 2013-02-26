@@ -87,6 +87,7 @@
   <script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.4.4/underscore-min.js"></script>
   <script src="http://cdnjs.cloudflare.com/ajax/libs/ICanHaz.js/0.10/ICanHaz.min.js"></script>
 
+  <script src="{{ STATIC_URL }}js/jquery.inputfit.js"></script>
 
     <script type="text/javascript">
       var fields = [
@@ -155,6 +156,11 @@
           }
         });
       });
+
+
+      $('.fill-in-the-blank').inputfit();
+
+
     </script>
 
 </body>
